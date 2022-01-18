@@ -5,17 +5,17 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
-
+    //
     defaultConfig {
         applicationId "com.allannava.todolistviper"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        vectorDrawables.useSupportLibrary = true
     }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -43,5 +43,13 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-
+    //
+    implementation 'com.orhanobut:hawk:2.0.1' // Secure Storage
+    implementation 'com.squareup.picasso:picasso:2.5.2'// img sdk
+    implementation 'commons-validator:commons-validator:1.6' // Email Validator
+    implementation 'com.google.code.gson:gson:2.8.5'
+    // preferences
+    implementation 'androidx.preference:preference:1.1.0'
+    implementation 'androidx.multidex:multidex:2.0.1' //multidex
+    //
 }
