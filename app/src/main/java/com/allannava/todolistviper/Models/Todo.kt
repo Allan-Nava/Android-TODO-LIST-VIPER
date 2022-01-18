@@ -5,5 +5,13 @@ package com.allannava.todolistviper.Models
  * Updated by Allan Nava on 18/01/2022.
  */
 class Todo {
-
+    //
+    var id : Int? = null
+    var name : String = ""
+    //
+    constructor(id: Int, name: String){
+        this.id = id
+        this.name = name
+    }
+    //
 }
