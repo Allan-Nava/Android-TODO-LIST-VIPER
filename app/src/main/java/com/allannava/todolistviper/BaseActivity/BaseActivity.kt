@@ -18,7 +18,7 @@ import com.allannava.todolistviper.R
 
 /**
  * Created by Allan Nava on 18/01/2022.
- * Updated by Allan Nava on 18/01/2022.
+ * Updated by Allan Nava on 19/01/2022.
  */
 
 interface BaseOnActivityResult {
@@ -36,6 +36,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseContracts.View {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
     }
 
     override fun onResume() {
@@ -60,7 +61,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseContracts.View {
         }
 
 
-    override fun attachBaseContext(newBase: Context?) {
+    /*override fun attachBaseContext(newBase: Context?) {
         //super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase))
         /*try {
             //super.attachBaseContext(newBase!!)
@@ -69,7 +70,7 @@ abstract class BaseActivity : AppCompatActivity(), BaseContracts.View {
         } catch (e: Exception) {
             e.printStackTrace()
         }*/
-    }
+    }*/
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -85,7 +86,6 @@ abstract class BaseActivity : AppCompatActivity(), BaseContracts.View {
         val layoutParams = layout.layoutParams as ViewGroup.MarginLayoutParams
         layoutParams.leftMargin = topMargin!!
         layoutParams.rightMargin = topMargin
-
         layout.layoutParams = layoutParams
     }
 
@@ -124,4 +124,5 @@ abstract class BaseActivity : AppCompatActivity(), BaseContracts.View {
             e.printStackTrace()
         }
     }
+    //
 }

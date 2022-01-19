@@ -6,7 +6,7 @@ import androidx.multidex.MultiDex
 
 /**
  * Created by Allan Nava on 18/01/2022.
- * Updated by Allan Nava on 18/01/2022.
+ * Updated by Allan Nava on 19/01/2022.
  */
 
 class MyApplication : Application() {
@@ -20,6 +20,7 @@ class MyApplication : Application() {
         super.onCreate()
         //
         appContext = applicationContext
+        //
     }
     companion object {
         var appContext: Context? = null

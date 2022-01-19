@@ -2,6 +2,7 @@ package com.allannava.todolistviper.MainModule
 
 import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import com.allannava.todolistviper.MainModule.Interactors.MainInteractor
 
 /**
@@ -12,7 +13,6 @@ class MainPresenter(var view: MainContracts.View?) : MainContracts.Presenter {
     var interactor: MainContracts.Interactor? = MainInteractor(view?.getActivityContext())
     var router: MainContracts.Router? = null
     private val TAG = "MainPresenter"
-
     //
     override fun onCreate(bundle: Bundle?) {
         super.onCreate(bundle)
@@ -38,7 +38,8 @@ class MainPresenter(var view: MainContracts.View?) : MainContracts.Presenter {
     // region Presenter
 
     override fun handleTodoStates() {
-
+        Log.d(TAG, "handleTodoStates")
+        interactor?.findAllTodo()
     }
     // end region
 
