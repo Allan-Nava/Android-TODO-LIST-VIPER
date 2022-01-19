@@ -1,6 +1,8 @@
 package com.allannava.todolistviper.MainModule
 
+import android.content.Context
 import com.allannava.todolistviper.BaseActivity.BaseContracts
+import com.allannava.todolistviper.BaseTodo.BaseTodoContracts
 import com.allannava.todolistviper.Models.Todo
 
 /**
@@ -13,7 +15,19 @@ object MainContracts {
 
     }
 
+    interface Presenter :  BaseContracts.Presenter {
+        fun handleTodoStates()
+    }
 
+    interface Interactor : BaseTodoContracts.Interactor {
+        var context: Context?
+        fun findAllTodo()
+        //
+    }
+
+    interface Router : BaseTodoContracts.Router {
+
+    }
 
     interface TodoLocalDataManagerInteractor :  BaseContracts.Interactor {
         fun saveLocalTodo(todo: Todo)
