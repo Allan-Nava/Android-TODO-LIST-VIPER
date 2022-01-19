@@ -26,8 +26,8 @@ interface BaseOnActivityResult {
 }
 //
 abstract class BaseActivity : AppCompatActivity(), BaseContracts.View {
-
-    var loginCallBack: BaseOnActivityResult? = null
+    //
+    //var loginCallBack: BaseOnActivityResult? = null
     var dialog: Dialog? = null
 
     override fun getActivityContext(): Context? {
@@ -117,5 +117,11 @@ abstract class BaseActivity : AppCompatActivity(), BaseContracts.View {
         return alert
     }
 
-
+    override fun showErrorDialog(error: String?) {
+        try {
+            error?.let { createDialog(it) }
+        }catch(e: Exception){
+            e.printStackTrace()
+        }
+    }
 }
